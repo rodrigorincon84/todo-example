@@ -5,6 +5,8 @@ pipeline:
       - bundle install --path=bundler
       - rspec spec/
   docker:
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
     username: $$DOCKER_HUB_USER
     password: $$DOCKER_HUB_PWD
     email: $$DOCKER_HUB_EMAIL
