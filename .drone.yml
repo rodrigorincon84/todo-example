@@ -14,7 +14,7 @@ pipeline:
     when:
       branch: master
 
-  deploy:
+  notify:
       image: plugins/webhook
       debug: true
       method: POST
