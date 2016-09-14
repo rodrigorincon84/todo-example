@@ -23,6 +23,7 @@ pipeline:
     header:
       Authorization: Bearer $$KONTENA_TOKEN
     content_type: application/json
+    skip_verify: true
     when:
       branch: master
     template: >
