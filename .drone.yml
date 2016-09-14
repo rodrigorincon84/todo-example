@@ -18,6 +18,7 @@ pipeline:
   curl:
     image: ruby:2.3
     commands:
+      - env
       - >-
         echo "Using token: $$KONTENA_TOKEN"
       - >-
