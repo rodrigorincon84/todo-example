@@ -15,7 +15,7 @@ pipeline:
       branch: master
 
   notify:
-    image: plugins/drone-webhook
+    image: plugins/webhook
     debug: true
     method: POST
     urls:
