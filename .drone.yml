@@ -18,8 +18,8 @@ pipeline:
   curl:
     image: ruby:2.3
     commands:
-      - >echo "Using token: $$KONTENA_TOKEN"
-      - >curl -k -X POST -d '{"force":true}' -H "Content-Type: application/json" -H "Authorization: Bearer $$KONTENA_TOKEN" https://95.85.41.216/v1/services/drone/todo-example-app/deploy
+      ->echo "Using token: $$KONTENA_TOKEN"
+      ->curl -k -X POST -d '{"force":true}' -H "Content-Type: application/json" -H "Authorization: Bearer $$KONTENA_TOKEN" https://95.85.41.216/v1/services/drone/todo-example-app/deploy
 
 services:
   database:
