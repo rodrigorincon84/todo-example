@@ -1,10 +1,10 @@
 version: '2'
 services:
   app:
-    image: kontena/todo-example:latest
+    image: jnummelin/todo-example:latest
     extends:
       file: docker-compose.yml
-      service: web    
+      service: web
     environment:
       - MONGODB_URI=mongodb://${project}-mongodb.kontena.local/todo_production
 

@@ -25,7 +25,7 @@ services:
           oneshot: true
 
   app:
-    image: kontena/todo-example:latest
+    image: jnummelin/todo-example:latest
     links:
       - mongodb:mongodb
       - loadbalancer
@@ -43,3 +43,7 @@ services:
       strategy: daemon
     ports:
       - 80:80
+    secrets:
+      - secret: LE_CERTIFICATE_todo-app_kontena_io_BUNDLE
+        name: SSL_CERTS
+        type: env
