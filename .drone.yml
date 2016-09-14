@@ -14,7 +14,9 @@ pipeline:
     when:
       branch: master
 
+notify:
   webhook:
+    method: POST
     urls:
       - https://95.85.41.216/drone/todo-example-app/deploy
     header:
