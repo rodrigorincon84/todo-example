@@ -16,6 +16,7 @@ pipeline:
 
 notify:
   webhook:
+    debug: true
     method: POST
     urls:
       - https://95.85.41.216/drone/todo-example-app/deploy
