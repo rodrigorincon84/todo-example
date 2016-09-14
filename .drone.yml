@@ -25,7 +25,6 @@ pipeline:
     template: >
       {"force":true}
 
-
 services:
   database:
     image: mongo:3.2
