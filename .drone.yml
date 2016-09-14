@@ -15,18 +15,18 @@ pipeline:
       branch: master
 
   notify:
-    webhook:
-      debug: true
-      method: POST
-      urls:
-        - https://95.85.41.216/drone/todo-example-app/deploy
-      header:
-        Authorization: Bearer $$KONTENA_TOKEN
-      content_type: application/json
-      when:
-        branch: master
-      template: >
-        {"force":true}
+    image: plugins/drone-webhook
+    debug: true
+    method: POST
+    urls:
+      - https://95.85.41.216/drone/todo-example-app/deploy
+    header:
+      Authorization: Bearer $$KONTENA_TOKEN
+    content_type: application/json
+    when:
+      branch: master
+    template: >
+      {"force":true}
 
 services:
   database:
