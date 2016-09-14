@@ -5,6 +5,7 @@ pipeline:
       - bundle install --path=bundler
       - rspec spec/
   docker:
+    image: plugins/docker
     environment:
       - DOCKER_LAUNCH_DEBUG=true
     repo: jnummelin/todo-example
