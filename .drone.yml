@@ -17,7 +17,7 @@ pipeline:
   kontena:
     image: jnummelin/kontena-cli
     commands:
-      - kontena app deploy -f kontena-cluster.yml
+      - SSL_IGNORE_ERRORS=true kontena app deploy -f kontena-cluster.yml
 
 
 services:
