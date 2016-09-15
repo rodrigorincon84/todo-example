@@ -14,14 +14,11 @@ pipeline:
     when:
       branch: master
 
-
-  curl:
-    image: ruby:2.3
+  kontena:
+    image: jnummelin/kontena-cli
     commands:
-      - >-
-        echo "Using token: $KONTENA_TOKEN"
-      - >-
-        curl -k -X POST -d '{"force":true}' -H "Content-Type: application/json" -H "Authorization: Bearer $KONTENA_TOKEN" https://95.85.41.216/v1/services/drone/todo-example-app/deploy
+      - kontena app deploy -f kontena-cluster.yml
+
 
 services:
   database:
