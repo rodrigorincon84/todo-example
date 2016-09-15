@@ -4,6 +4,7 @@ pipeline:
     commands:
       - bundle install --path=bundler
       - rspec spec/
+      
   docker:
     image: plugins/docker
     environment:
@@ -18,7 +19,8 @@ pipeline:
     image: jnummelin/kontena-cli
     commands:
       - SSL_IGNORE_ERRORS=true kontena app deploy -f kontena-cluster.yml
-
+    when:
+      branch: master
 
 services:
   database:
