@@ -25,7 +25,7 @@ services:
           oneshot: true
 
   app:
-    image: registry.kontena.local/todo-example:latest
+    image: jnummelin/todo-example:latest
     links:
       - mongodb:mongodb
       - loadbalancer
