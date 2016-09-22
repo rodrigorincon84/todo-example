@@ -25,13 +25,13 @@ services:
           oneshot: true
 
   app:
-    image: jnummelin/todo-example:latest
+    image: registry.kontena.local/todo-example:latest
     links:
       - mongodb:mongodb
       - loadbalancer
     environment:
       - MONGODB_URI=mongodb://%{project}-mongodb-1.kontena.local:27017,%{project}-mongodb-2.kontena.local:27017,%{project}-mongodb-3.kontena.local:27017/todo_production
-      - KONTENA_LB_VIRTUAL_HOSTS=todo-packet.kontena.io
+      - KONTENA_LB_VIRTUAL_HOSTS=todo-app.kontena.io
       - KONTENA_LB_INTERNAL_PORT=9292
     deploy:
       wait_for_port: 9292
@@ -45,6 +45,6 @@ services:
       - 80:80
       - 443:443
     secrets:
-      - secret: LE_CERTIFICATE_todo-packet_kontena_io_BUNDLE
+      - secret: LE_CERTIFICATE_todo-app_kontena_io_BUNDLE
         name: SSL_CERTS
         type: env
