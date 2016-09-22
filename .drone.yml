@@ -18,6 +18,7 @@ pipeline:
   kontena:
     image: jnummelin/kontena-cli
     commands:
+      - env
       - SSL_IGNORE_ERRORS=true kontena app deploy -f kontena-cluster.yml app
     when:
       branch: master
