@@ -2,6 +2,8 @@ version: '2'
 services:
   app:
     image: jnummelin/todo-example:latest
+    ports:
+      - 80:9292
     extends:
       file: docker-compose.yml
       service: web

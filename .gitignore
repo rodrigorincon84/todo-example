@@ -36,3 +36,4 @@ build/
 .rvmrc
 
 .drone_sec.yml
+.secrets
