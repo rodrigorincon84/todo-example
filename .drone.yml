@@ -5,6 +5,11 @@ pipeline:
       - bundle install --path=bundler
       - rspec spec/
 
+  docker_env:
+    image: plugins/docker
+    commands:
+      - env
+
   docker:
     image: plugins/docker
     environment:
