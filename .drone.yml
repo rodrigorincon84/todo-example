@@ -18,7 +18,6 @@ pipeline:
   kontena:
     image: kontena/cli
     commands:
-      - env
       - SSL_IGNORE_ERRORS=true kontena stack upgrade todo
     when:
       branch: master
