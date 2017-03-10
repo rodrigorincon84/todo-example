@@ -1,11 +1,12 @@
 stack: jussi/todo
 description: Todo-app bundle, all required services within the stack
 version: 0.2.3
+
 services:
   mongo:
     image: mongo:3.2
-    stateful: true
     instances: 3
+    stateful: true
     command: --replSet kontena --smallfiles
     health_check:
       protocol: tcp
