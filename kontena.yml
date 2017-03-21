@@ -32,7 +32,7 @@ services:
 
   web:
     image: jnummelin/todo-example:latest
-    instances: 5
+    instances: 15
     deploy:
       wait_for_port: 9292
       min_health: 0.8
