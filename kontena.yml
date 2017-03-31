@@ -1,6 +1,11 @@
 stack: jussi/todo
 description: Todo-app bundle, all required services within the stack
 version: 0.2.3
+variables:
+  release:
+    type: string
+    from:
+      env: DRONE_TAG
 
 services:
   mongo:
