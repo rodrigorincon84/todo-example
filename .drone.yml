@@ -12,8 +12,8 @@ pipeline:
     commands:
       - docker-compose up -d --build
       - bats tests/
-      - docker-compose stop
-      - docker-compose rm -f -v
+      - docker-compose stop && docker-compose rm -f -v && sleep 1
+      
 
   docker:
     image: plugins/docker:latest
