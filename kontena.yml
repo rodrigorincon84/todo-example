@@ -36,7 +36,7 @@ services:
           oneshot: true
 
   web:
-    image: "jnummelin/todo-example:${DRONE_TAG}"
+    image: "jnummelin/todo-example:${release}"
     instances: 3
     deploy:
       wait_for_port: 9292
