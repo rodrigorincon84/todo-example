@@ -12,8 +12,8 @@ pipeline:
     commands:
       - docker-compose up -d --build
       - bats tests/
-      - docker-compose stop && docker-compose rm -f -v && sleep 1
-      
+      - docker-compose stop && docker-compose rm -f -v && sleep 5 && echo "Integration testing done"
+
 
   docker:
     image: plugins/docker:latest
