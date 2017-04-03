@@ -50,9 +50,4 @@ services:
       - KONTENA_LB_VIRTUAL_HOSTS=todo-app.kontena.io
       - KONTENA_LB_INTERNAL_PORT=9292
     command: bundle exec puma -p 9292 -e production
-    health_check:
-      protocol: http
-      uri: /todos
-      initial_delay: 60
-      interval: 60
-      port: 9292
+    
