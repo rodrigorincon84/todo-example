@@ -6,12 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-       - image: circleci/ruby:2.3-jessie-node-browsers
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/ruby:2.3-jessie-node-browsers
       - image: circleci/mongo:3.2-ram
 
     working_directory: ~/repo
@@ -29,7 +24,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle check || bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
           paths:
@@ -39,7 +34,9 @@ jobs:
       # Database setup
       # - run: bundle exec rake db:create
       # - run: bundle exec rake db:schema:load
-
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:27017 -timeout 1m
       # run tests!
       - run:
           name: run tests
