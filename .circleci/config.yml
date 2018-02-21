@@ -85,7 +85,7 @@ jobs:
             VHOST: todo-app.kontena.works
             LOADBALANCER: ingress-lb/lb
           command: |
-            kontena stack install -v release=${CIRCLE_BUILD_NUM} || kontena stack upgrade -v release=${CIRCLE_BUILD_NUM} todo
+            kontena stack install -v release=${CIRCLE_BUILD_NUM} || kontena stack upgrade -v release=${CIRCLE_BUILD_NUM} todo
 
 workflows:
   version: 2
