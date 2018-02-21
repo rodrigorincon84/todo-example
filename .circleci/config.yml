@@ -58,7 +58,7 @@ jobs:
 
   build_image:
     working_directory: ~/repo
-
+    docker:
     steps:
       - setup_remote_docker
 
