@@ -5,7 +5,12 @@ variables:
   release:
     type: string
     from:
-      env: DRONE_TAG
+      env: TAG
+
+  vhost:
+    type: string
+    from:
+      env: VHOST
 
 services:
   mongo:
@@ -47,7 +52,7 @@ services:
       - mongo
     environment:
       - MONGODB_URI=mongodb://mongo-1:27017,mongo-2:27017,mongo-3:27017/todo_production
-      - KONTENA_LB_VIRTUAL_HOSTS=todo-app.kontena.io
+      - KONTENA_LB_VIRTUAL_HOSTS=${vhost}
       - KONTENA_LB_INTERNAL_PORT=9292
     command: bundle exec puma -p 9292 -e production
-    
+
