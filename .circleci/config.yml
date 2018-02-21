@@ -91,9 +91,10 @@ workflows:
   build-and-deploy:
     jobs:
       - test
-      # TODO: Add master filtering when actually working
-      - build_image
-
+      - build_image:
+          filters:
+            branches:
+              only: master
       - deploy:
           requires:
             - test
