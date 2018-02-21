@@ -57,8 +57,6 @@ jobs:
           destination: test-results
 
   build_image:
-    machine: true
-
     working_directory: ~/repo
 
     steps:
