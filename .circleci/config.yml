@@ -58,8 +58,6 @@ jobs:
 
   build_image:
     machine: true
-    docker:
-      - image: circleci/ruby:2.3-jessie-node-browsers
 
     working_directory: ~/repo
 
