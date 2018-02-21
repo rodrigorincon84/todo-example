@@ -79,6 +79,7 @@ jobs:
     docker:
       - image: kontena/cli:latest
 
+    steps:
       - run:
           environment:
             # Variables for the stack
