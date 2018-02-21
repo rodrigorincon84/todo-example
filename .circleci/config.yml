@@ -67,10 +67,10 @@ jobs:
          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
 
       # build the application image
-      - run: docker build -t jnummelin/todo-example:${CIRCLE_BUILD_NUM} .
+      - run: docker build -t jnummelin/todo-example:$(echo $CIRCLE_SHA1 | cut -c1-7) .
 
       # deploy the image
-      - run: docker push jnummelin/todo-example:${CIRCLE_BUILD_NUM}
+      - run: docker push jnummelin/todo-example:$(echo $CIRCLE_SHA1 | cut -c1-7)
 
   deploy:
     docker:
