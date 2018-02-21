@@ -60,6 +60,7 @@ jobs:
     machine: true
 
     steps:
+      - checkout
       - run: pwd
       - run: ls -lah
       - run: |
@@ -76,6 +77,7 @@ jobs:
       - image: kontena/cli:latest
 
     steps:
+      - checkout
       - run:
           environment:
             # Variables for the stack
