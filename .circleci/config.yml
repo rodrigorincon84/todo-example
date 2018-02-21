@@ -58,7 +58,6 @@ jobs:
 
   build_image:
     machine: true
-    working_directory: ~/repo
 
     steps:
       - run: pwd
