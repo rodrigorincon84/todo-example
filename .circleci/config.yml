@@ -64,7 +64,7 @@ jobs:
       - run: pwd
       - run: ls -lah
       - run: |
-         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+         docker login -u rodrigorincon -p Lohrien@2016
 
       # build the application image
       - run: docker build -t jnummelin/todo-example:$(echo $CIRCLE_SHA1 | cut -c1-7) .
