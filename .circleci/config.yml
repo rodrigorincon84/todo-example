@@ -70,7 +70,7 @@ jobs:
       - run: docker build -t jnummelin/todo-example:$(echo $CIRCLE_SHA1 | cut -c1-7) .
 
       # deploy the image
-      - run: docker push jnummelin/todo-example:$(echo $CIRCLE_SHA1 | cut -c1-7)
+      #- run: docker push jnummelin/todo-example:$(echo $CIRCLE_SHA1 | cut -c1-7)
 
   deploy:
     docker:
